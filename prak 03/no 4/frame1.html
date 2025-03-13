@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+        input, select {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        input[type="color"] {
+            width: 50px;
+            padding: 2px;
+        }
+        input[type="submit"] {
+            width: 20%;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+        input:invalid + .error {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="#" method="post">
+        <h3>Form Tambah Data User</h3>
+        
+        <label for="name">Name</label> :
+        <input type="text" id="name" name="name" required>
+        <span class="error">Name is required!!!</span><br>
+        
+        <label for="address">Address</label> :
+        <input type="text" id="address" name="address" required>
+        <span class="error">Address is required!!!</span><br>
+        
+        <label for="email">Email</label> :
+        <input type="email" id="email" name="email" required pattern=".*@.*">
+        <span class="error">Harap isi bidang ini atau masukkan email yang valid.</span><br>
+        
+        <label for="homepage">Home Page</label> :
+        <input type="url" id="homepage" name="homepage"><br>
+        
+        <label for="birthday">Birthday</label> :
+        <input type="text" id="birthday" name="birthday" placeholder="hh/bb/tttt"><br>
+        
+        <label for="color">Favorit Color</label> :
+        <input type="color" id="color" name="color" value="#000000"><br>
+        
+        <label for="ipk">IPK</label> :
+        <input type="number" id="ipk" name="ipk" min="0" max="4" step="0.1" value="0" required>
+        
+        <label for="phone">Phone Number</label> :
+        <input type="tel" id="phone" name="phone" pattern="^\d{3}-\d{7,10}$" required>
+        <span class="error">Format harus ###-####### hingga ###-##########</span><br>
+        
+        <label></label>
+        <input type="submit" value="Add">
+    </form>
+
+</body>
+</html>

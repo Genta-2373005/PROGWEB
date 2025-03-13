@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bottom Frame</title>
+    <script>
+        function changeColor(frame, color) {
+            parent.frames[frame].document.body.style.backgroundColor = color;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="Magenta" onclick="changeColor('frame3', 'magenta')">
+        <input type="button" value="Yellow" onclick="changeColor('frame4', 'yellow')">
+    </form>
+</body>
+</html>

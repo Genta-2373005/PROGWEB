@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Data</title>
+</head>
+<body>
+    <form action="proses.html" method="post">
+        <table border="1" width="400" cellpadding="5">
+            <tr>
+                <th colspan="2" style="background-color: #ccc;">Personal Data</th>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td><textarea name="alamat" rows="3" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>
+                    <input id="lk" type="radio" name="jk" value="Laki-laki" required>
+                    <label for="lk">Laki-laki</label>
+                    <input id="pr" type="radio" name="jk" value="Perempuan" required>
+                    <label for="pr">Perempuan</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Tanggal Lahir</td>
+                <td>
+                    <select name="tanggal">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <!-- Tambahkan opsi lain -->
+                    </select>
+                    <select name="bulan">
+                        <option>Januari</option>
+                        <option>Februari</option>
+                        <option>Maret</option>
+                        <!-- Tambahkan opsi lain -->
+                    </select>
+                    <select name="tahun">
+                        <option>1980</option>
+                        <option>1981</option>
+                        <option>1982</option>
+                        <!-- Tambahkan opsi lain -->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Jurusan</td>
+                <td>
+                    <select name="jurusan" multiple="multiple" size="3">
+                        <option>Teknik Informatika</option>
+                        <option>Sistem Informasi</option>
+                        <option>Elektro</option>
+                        <option>Sipil</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobi</td>
+                <td>
+                    <input type="checkbox" name="hobi" value="Membaca"> Membaca
+                    <input type="checkbox" name="hobi" value="Menulis"> Menulis
+                    <input type="checkbox" name="hobi" value="Catur"> Catur
+                    <input type="checkbox" name="hobi" value="Voli"> Voli
+                    <input type="checkbox" name="hobi" value="Badminton"> Badminton
+                    <input type="checkbox" name="hobi" value="Golf"> Golf
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

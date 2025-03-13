@@ -1,0 +1,82 @@
+<head>
+    <style>
+        table {
+            width: auto;
+            border: 1px solid black;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 3px;
+        }
+        th {
+            background-color: gray;
+            color: black;
+            text-align: center;
+            font-size: 24px;
+        }
+        .profile-img {
+            text-align: center;
+        }
+        .profile-img img {
+            width: 100px;
+            height: 100px;
+        }
+        .form-container {
+            width: 100%;
+        }
+        .form-container label {
+            display: inline-block;
+            width: 150px;
+        }
+        .form-container select,
+        .form-container input {
+            width: 150px;
+        }
+        .buttons {
+            text-align: right;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="2">Edit profile</th>
+        </tr>
+        <tr>
+            <td class="profile-img">
+                <img src="profile.jpg" alt="Profile Picture">
+                <br>
+                <button>Upload</button>
+            </td>
+            <td>
+                <div class="form-container">
+                    <label>Name</label> Tim Berners-Lee <br><br>
+                    <label>Position</label>
+                    <select>
+                        <optgroup label="Programmer">
+                            <option>Senior Programmer</option>
+                            <option>Junior Programmer</option>
+                        </optgroup>
+                        <optgroup label="System Analyst">
+                            <option>Senior Analyst</option>
+                            <option>Junior Analyst</option>
+                        </optgroup>
+                    </select>
+                    <br><br>
+                    <label>Password</label>
+                    <input type="text" value="admin">
+                    <br><br>
+                    <label>Confirm Password</label>
+                    <input type="password" value="*****">
+                    <br><br>
+                    <div class="buttons">
+                        <button>Reset</button>
+                        <button>Update</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
