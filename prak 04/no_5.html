@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .purple-bullet {
+            list-style-image: url('sqpurple.gif');
+        }
+        .orange-bullet {
+            list-style-image: url('sqorange.gif');
+        }
+        .bold-orange {
+            font-weight: bold;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li class="purple-bullet">Coffee</li>
+    <li class="purple-bullet">Tea
+        <ul>
+            <li class="orange-bullet"><span class="bold-orange">Cold</span> Tea
+                <ul>
+                    <ul><u>Jasmine</u></ul>
+                    <ul><u>Green</u></ul>
+                </ul>
+            </li>
+            <li class="orange-bullet"><span class="bold-orange">Hot</span> Tea</li>
+        </ul>
+    </li>
+    <li class="purple-bullet">Coca Cola</li>
+</ul>
+
+</body>
+</html>
