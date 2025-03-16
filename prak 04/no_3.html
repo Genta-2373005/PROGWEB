@@ -1,11 +1,39 @@
-<!-- https://github.com/Genta-2373005/PROGWEB  (baru bisa konek T-T) -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- </head>
- <body>
-    
- </body>
- </html>
+    <style>
+        .container {
+            width: 150px;
+            height: 100px;
+            background-color: #730000;
+            position: relative;
+        }
+        .corner-top-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 25px;
+            height: 25px;
+            background: url('top_left.gif') no-repeat;
+            background-size: cover;
+        }
+        .corner-bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 25px;
+            height: 25px;
+            background: url('bottom_right.gif') no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="corner-top-left"></div>
+        <div class="corner-bottom-right"></div>
+    </div>
+</body>
+</html>
