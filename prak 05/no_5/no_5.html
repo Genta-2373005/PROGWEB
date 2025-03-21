@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            display: inline-block;
+            position: relative;
+            border: 2px dotted grey;
+            padding: 0px;
+            margin-right: 0px;
+        }
+        li a {
+            text-decoration: none;
+            color: black;
+            padding: 3px 25px;
+            display: block;
+        }
+        li a:hover {
+            background-color: black;
+            color: white;
+        }
+        li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            padding: 0;
+        }
+        li ul li {
+            display: block;
+            width: 85px;
+            margin: 3px 0; 
+        }
+        li:hover ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#">News</a>
+            <ul>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">Movie</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</body>
+</html>

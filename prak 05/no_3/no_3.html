@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body,
+      div {
+        margin: 1px;
+        padding: 1px;
+        box-sizing: border-box;
+      }
+
+      .header {
+        width: calc(100% - 4px);
+        height: 50px;
+        background: red;
+        margin-bottom: 2px;
+      }
+
+      .sidebar {
+        width: 100px;
+        height: 200px;
+        background: blue;
+        float: left;
+        margin-right: 2px;
+      }
+
+      .content {
+        width: calc(100% - 107px);
+        background: green;
+        float: left;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .right-box {
+        width: 150px;
+        height: 150px;
+        background: yellow;
+        float: right;
+        margin-left: 2px;
+      }
+
+      .clearfix {
+        clear: both;
+        margin-top: 2px;
+      }
+    </style>
+  </head>
+<body>
+
+    <div class="header"></div>
+
+    <div class="sidebar"></div>
+
+    <div class="content">
+        <div class="right-box"></div>
+        content content content content content content content content content content content content 
+        content content content content content content content content content content content content 
+        content content content content content content content content content content content content 
+        content content content content content content content content content content content content 
+        content content content content content content content content content content content content 
+
+        <br style="clear:right"/>
+
+        content content content content content content content content content content content content 
+        content content content content content content content content content content content content 
+        content content content content content content content content content content content content 
+        content content content content content content content content content content content content 
+        content content content content content content content content content content content content 
+    </div>
+
+    <div class="clearfix"></div>
+
+</body>
+</html>

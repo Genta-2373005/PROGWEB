@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            position: relative;
+            width: 250px;
+            height: 100px;
+        }
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+        }
+        .half-circle {
+            position: absolute;
+            width: 100px; 
+            height: 50px;
+            top: 0;
+            z-index: 2;
+        }
+        .half-circle-left {
+            left: 0;
+        }
+        .half-circle-right {
+            left: 100px;
+        }
+        .circle-red-left {
+            left: 0;
+        }
+        .circle-purple {
+            left: 50px;
+        }
+        .circle-red-right {
+            left: 100px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="circle-red.png" class="circle circle-red-left">
+        <img src="circle-red-half.png" class="half-circle half-circle-left" >
+        <img src="circle-purple.png" class="circle circle-purple" >
+        <img src="circle-red.png" class="circle circle-red-right" >
+        <img src="circle-red-half.png" class="half-circle half-circle-right" >
+    </div>
+</body>
+</html>
