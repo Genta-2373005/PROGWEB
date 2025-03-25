@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="table-container"></div>
+
+<script>
+    function getValidNumber() {
+        let num;
+        do {
+            num = prompt("Masukkan angka untuk perkalian:");
+            if (num === null) return null; 
+        } while (isNaN(num) || num.trim() === ""); 
+        return parseInt(num, 10);
+    }
+
+    function generateMultiplicationTable(number) {
+        let container = document.getElementById("table-container");
+        let table = "<table>";
+        for (let i = 1; i <= number; i++) {
+            table += `<tr>
+                        <td>${i}</td>
+                        <td>x</td>
+                        <td>${number}</td>
+                        <td>=</td>
+                        <td>${i * number}</td>
+                      </tr>`;
+        }
+        table += "</table>";
+        container.innerHTML = table;
+    }
+
+    let number = getValidNumber();
+    if (number !== null) {
+        generateMultiplicationTable(number);
+    }
+</script>
+
+</body>
+</html>

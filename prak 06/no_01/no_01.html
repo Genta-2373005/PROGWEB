@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid black;
+            margin: 3px;
+        }
+    </style>
+    <script>
+        function hitung() {
+            let num1 = document.getElementById("angka1").value;
+            let num2 = document.getElementById("angka2").value;
+            
+            if (isNaN(num1) && isNaN(num2)) {
+                alert("Angka pertama dan kedua harus angka.");
+                return;
+            } else if (isNaN(num1)) {
+                alert("Angka pertama bukan angka.");
+                return;
+            } else if (isNaN(num2)) {
+                alert("Angka kedua harus angka.");
+                return;
+            }
+            
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+            
+            document.getElementById("num1_1").innerHTML = num1;
+            document.getElementById("num2_1").innerHTML = num2;
+            document.getElementById("hasil1").innerHTML = num1 + num2;
+            
+            document.getElementById("num1_2").innerHTML = num1;
+            document.getElementById("num2_2").innerHTML = num2;
+            document.getElementById("hasil2").innerHTML = num1 - num2;
+        }
+    </script>
+</head>
+<body>
+    <label>Angka Pertama :</label>
+    <input type="text" id="angka1">
+    <br>
+    <label>Angka Kedua :</label>
+    <input type="text" id="angka2">
+    <br>
+    <button onclick="hitung()">Count</button>
+    <br><br>
+    <table>
+        <tr>
+            <td id="num1_1"></td>
+            <td>+</td>
+            <td id="num2_1"></td>
+            <td>=</td>
+            <td id="hasil1"></td>
+        </tr>
+        <tr>
+            <td id="num1_2"></td>
+            <td>-</td>
+            <td id="num2_2"></td>
+            <td>=</td>
+            <td id="hasil2"></td>
+        </tr>
+    </table>
+</body>
+</html>

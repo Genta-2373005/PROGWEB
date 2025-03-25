@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            width: 300px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .row label {
+            width: 80px;
+            font-weight: bold;
+        }
+        .row input, .row select {
+            flex: 1;
+            padding: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <label for="input">Input :</label>
+        <input type="text" id="input">
+    </div>
+    <div class="row">
+        <label for="output">Output :</label>
+        <input type="text" id="output" readonly>
+    </div>
+    <div class="row">
+        <select id="conversion">
+            <option value="decimal-binary">decimal-biner</option>
+            <option value="binary-decimal">biner-decimal</option>
+        </select>
+    </div>
+    <div class="buttons">
+        <button onclick="convert()">PROSES</button>
+        <button onclick="reset()">RESET</button>
+    </div>
+</div>
+
+<script>
+    function convert() {
+        let input = document.getElementById("input").value;
+        let output = document.getElementById("output");
+        let conversionType = document.getElementById("conversion").value;
+
+        if (conversionType === "decimal-binary") {
+            output.value = parseInt(input, 10).toString(2);
+        } else if (conversionType === "binary-decimal") {
+            output.value = parseInt(input, 2).toString(10);
+        }
+    }
+
+    function reset() {
+        document.getElementById("input").value = "";
+        document.getElementById("output").value = "";
+    }
+</script>
+
+</body>
+</html>

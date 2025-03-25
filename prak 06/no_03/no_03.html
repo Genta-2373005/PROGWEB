@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        td {
+            width: 60px;
+            height: 80px;
+            background-color: orange;
+
+        }
+        .empty {
+            background-color: transparent;
+            border: none;
+        }
+    </style>
+    <script>
+        function generatePiramida() {
+            let tinggi = document.getElementById("tinggi").value;
+            let container = document.getElementById("piramida");
+            container.innerHTML = "";
+            
+            if (isNaN(tinggi) || tinggi <= 0) {
+                alert("Masukkan angka yang valid!");
+                return;
+            }
+            
+            tinggi = parseInt(tinggi);
+            let table = document.createElement("table");
+            
+            for (let i = 0; i < tinggi; i++) {
+                let row = document.createElement("tr");
+                let totalCols = 2 * i + 1;
+                let emptyCols = tinggi - i - 1;
+                
+                for (let j = 0; j < emptyCols; j++) {
+                    let emptyCell = document.createElement("td");
+                    emptyCell.classList.add("empty");
+                    row.appendChild(emptyCell);
+                }
+                
+                for (let j = 0; j < totalCols; j++) {
+                    let cell = document.createElement("td");
+                    row.appendChild(cell);
+                }
+                
+                for (let j = 0; j < emptyCols; j++) {
+                    let emptyCell = document.createElement("td");
+                    emptyCell.classList.add("empty");
+                    row.appendChild(emptyCell);
+                }
+                
+                table.appendChild(row);
+            }
+            container.appendChild(table);
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <label for="tinggi">Tinggi Piramida: </label>
+        <input type="text" id="tinggi">
+        <button onclick="generatePiramida()">Proses</button>
+        <div id="piramida"></div>
+    </div>
+</body>
+</html>
