@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        input, select, button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Data</h3>
+<input type="text" id="inputData" />
+<button onclick="addData()">Add</button>
+<select id="operation" onchange="processOperation()">
+    <option value="">Pilih Operasi</option>
+    <option value="display">Display</option>
+    <option value="count">Count</option>
+    <option value="sum">Sum</option>
+    <option value="average">Average</option>
+    <option value="max">Max</option>
+    <option value="min">Min</option>
+    <option value="odd">Ganjil</option>
+    <option value="even">Genap</option>
+    <option value="clear">Hapus</option>
+</select>
+
+<h3>Hasil</h3>
+<div id="output"></div>
+
+<script>
+    let dataArray = [];
+
+    function addData() {
+        const input = document.getElementById("inputData");
+        const value = parseFloat(input.value);
+        if (!isNaN(value)) {
+            dataArray.push(value);
+            input.value = "";
+            input.focus();
+        } else {
+            alert("Masukkan angka yang valid.");
+        }
+    }
+
+    function processOperation() {
+        const operation = document.getElementById("operation").value;
+        const output = document.getElementById("output");
+
+        switch (operation) {
+            case "display":
+                output.innerText = dataArray.join(", ");
+                break;
+            case "count":
+                output.innerText = "Jumlah Data: " + dataArray.length;
+                break;
+            case "sum":
+                output.innerText = "Jumlah Total: " + dataArray.reduce((a, b) => a + b, 0);
+                break;
+            case "average":
+                if (dataArray.length > 0) {
+                    let avg = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
+                    output.innerText = "Rata-rata: " + avg;
+                } else {
+                    output.innerText = "Data kosong.";
+                }
+                break;
+            case "max":
+                output.innerText = "Nilai Maksimum: " + Math.max(...dataArray);
+                break;
+            case "min":
+                output.innerText = "Nilai Minimum: " + Math.min(...dataArray);
+                break;
+            case "odd":
+                output.innerText = "Ganjil: " + dataArray.filter(n => n % 2 !== 0).join(", ");
+                break;
+            case "even":
+                output.innerText = "Genap: " + dataArray.filter(n => n % 2 === 0).join(", ");
+                break;
+            case "clear":
+                dataArray = [];
+                output.innerText = "Data telah dihapus.";
+                break;
+            default:
+                output.innerText = "";
+        }
+    }
+</script>
+
+</body>
+</html>
+

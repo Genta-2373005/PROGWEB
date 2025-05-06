@@ -1,0 +1,56 @@
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .container {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 300px;
+            font-family: Arial, sans-serif;
+        }
+        .form-row {
+            margin-bottom: 5px;
+        }
+        label {
+            display: inline-block;
+            width: 70px;
+            vertical-align: top;
+        }
+        textarea {
+            width: 180px;
+            height: 80px;
+            resize: vertical;
+        }
+        .counter {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-row">
+        <label for="judul">Judul :</label>
+        <input type="text" id="judul" name="judul">
+    </div>
+    <div class="form-row">
+        <label for="deskripsi">Deskripsi:</label>
+        <textarea id="deskripsi" name="deskripsi" maxlength="256"></textarea>
+    </div>
+    <div class="counter">
+        <input type="text" id="charCount" value="0/256" readonly style="width: 45px;">
+    </div>
+    
+</div>
+
+<script>
+const textarea = document.getElementById('deskripsi');
+const charCount = document.getElementById('charCount');
+
+textarea.addEventListener('input', function () {
+    charCount.value = textarea.value.length + "/256";
+});
+
+</script>
+
+</body>
+</html>
