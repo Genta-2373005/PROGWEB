@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .highlight {
+            color: red;
+        }
+    </style>
+   <script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+
+    <input type="text" id="searchBox" placeholder="Ketik untuk mencari..." />
+
+    <ul id="companyList">
+        <li>Sun Microsystem</li>
+        <li>Apache Software Foundation</li>
+        <li>Oracle Coorporation</li>
+        <li>International Bussiness Machines</li>
+        <li>Microsoft Coorporation</li>
+        <li>Apple Inc</li>
+        <li>Sap Ag</li>
+        <li>Accenture</li>
+        <li>Computer Sciences Coorporation</li>
+        <li>Google</li>
+        <li>Softbank</li>
+        <li>Yahoo</li>
+    </ul>
+
+    <script>
+        $(document).ready(function(){
+            $('#searchBox').on('keyup', function(){
+                var searchText = $(this).val().toLowerCase();
+                $('#companyList li').each(function(){
+                    var company = $(this).text().toLowerCase();
+                    if (company.includes(searchText) && searchText !== "") {
+                        $(this).addClass('highlight');
+                    } else {
+                        $(this).removeClass('highlight');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

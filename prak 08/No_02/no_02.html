@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #nameBox {
+            border: 1px solid black;
+            width: 200px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        #nameBox div {
+            margin: 2px 0;
+        }
+
+        .highlight {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+
+    <input type="text" id="nameInput">
+    <button id="addBtn">Add</button>
+    <button id="searchBtn">Search</button>
+
+    <div id="nameBox">
+        <div>John Resig</div>
+        <div>George Martin</div>
+        <div>Malcom John Sinclair</div>
+        <div>J. Ohn</div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#addBtn').click(function () {
+                let name = $('#nameInput').val().trim();
+                if (name !== '') {
+                    $('<div>' + name + '</div>').appendTo('#nameBox');
+                    $('#nameInput').val('');
+                }
+            });
+
+            $('#searchBtn').click(function () {
+                let searchTerm = $('#nameInput').val().trim().toLowerCase();
+                $('#nameBox div').each(function () {
+                    let text = $(this).text().toLowerCase();
+                    if (text.includes(searchTerm) && searchTerm !== '') {
+                        $(this).addClass('highlight');
+                    } else {
+                        $(this).removeClass('highlight');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

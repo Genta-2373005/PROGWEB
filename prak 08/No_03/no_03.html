@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 2px solid blue;
+            text-align: center;
+        }
+        span {
+            color: red;
+        }
+    </style>
+    <script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+
+    <button>Change colors</button><br><br>
+
+    <div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div>
+
+    <script>
+        $("div").click(function () {
+            $("div").removeAttr("id"); 
+            $(this).css("background-color", "red").attr("id", "kotakMerah");
+        });
+
+        $("button").click(function () {
+            $("div").each(function () {
+                if ($(this).attr("id") === "kotakMerah") {
+                    return false; 
+                }
+                $(this).css("background-color", "yellow");
+            });
+        });
+    </script>
+
+</body>
+</html>

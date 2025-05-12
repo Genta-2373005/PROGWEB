@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#main-menu > li {
+    position: relative;
+    padding: 5px 20px;
+    cursor: pointer;
+    background-color: #FE019A;
+    border: 5px solid white;
+}
+
+#main-menu li ol {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 2px solid hotpink;
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    width: 150px;
+    z-index: 1000;
+}
+
+#main-menu li ol li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#main-menu li ol li:hover {
+    background-color: #f0f0f0;
+}
