@@ -1,0 +1,45 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <form>
+    <input type="text" id="title" placeholder="Title"><br>
+    <input type="text" id="content" placeholder="Content"><br>
+    <input type="text" id="generator" placeholder="Generator"><br>
+    <button type="button" onclick="tampilkanData()">Look</button>
+  </form>
+  <hr>
+  <div id="output"></div>
+  <script src="SIJson.js"></script>
+  <script>
+    function tampilkanData() {
+      const inputTitle = document.getElementById("title").value.toLowerCase();
+      const output = document.getElementById("output");
+
+      let html = `<h2><a href="${SIJson.link}" target="_blank">${SIJson.title}</a></h2><br>`;
+
+      const hasilFilter = SIJson.items.filter(item =>
+        item.title.toLowerCase().includes(inputTitle)
+      );
+
+      if (hasilFilter.length === 0) {
+        html += `<p><em>Tidak ada hasil untuk "${inputTitle}"</em></p>`;
+      } else {
+        hasilFilter.forEach(item => {
+          html += `
+            <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+            <p>By : ${item.author} / ${item.published}</p>
+            <p>${item.description}</p>
+            <p>Universitas : <a href="${item.universitas.m}" target="_blank">Click Here</a></p>
+            <p>Tag(s) : ${item.tags}</p>
+            <hr>
+          `;
+        });
+      }
+
+      html += `<p>©${SIJson.generator}</p>`;
+      output.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
