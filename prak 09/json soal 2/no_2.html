@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8">
 </head>
@@ -10,9 +12,25 @@
   </form>
   <hr>
   <div id="output"></div>
-  <script src="SIJson.js"></script>
+
   <script>
+    let SIJson = null;
+    fetch('SIJson.txt')
+      .then(response => response.json())
+      .then(data => {
+        SIJson = data;
+      })
+      .catch(error => {
+        console.error('Gagal memuat data:', error);
+        document.getElementById('output').innerHTML = '<p style="color:red;">Gagal memuat data dari SIJson.txt</p>';
+      });
+
     function tampilkanData() {
+      if (!SIJson) {
+        document.getElementById('output').innerHTML = '<p style="color:red;">Data belum siap. Silakan coba lagi beberapa saat.</p>';
+        return;
+      }
+
       const inputTitle = document.getElementById("title").value.toLowerCase();
       const output = document.getElementById("output");
 

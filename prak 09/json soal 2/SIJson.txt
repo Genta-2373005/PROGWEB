@@ -22,4 +22,4 @@
             "tags": "S1-Sistem Informasi, Basis Data 2"
             }
 	]
-};
+}

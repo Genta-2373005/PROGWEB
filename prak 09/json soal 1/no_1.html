@@ -47,7 +47,7 @@
       const tbody = $("#tabel-nilai");
       tbody.empty();
 
-      data.forEach((mhs, index) => {
+      data.forEach((mhs) => {
         const row = `
           <tr>
             <td>${mhs.nrp}</td>
@@ -64,25 +64,24 @@
       const pilihan = $(":radio[name='kelas']:checked").val();
 
       if (pilihan === "all") {
-        $.getJSON("nilaia.js", function (dataA) {
-          $.getJSON("nilaib.js", function (dataB) {
+        $.getJSON("nilaiA.json", function (dataA) {
+          $.getJSON("nilaiB.json", function (dataB) {
             const gabungan = dataA.nilai.concat(dataB.nilai);
             tampilkanData(gabungan);
           });
         });
 
       } else if (pilihan === "A") {
-        $.getJSON("nilaia.js", function (data) {
+        $.getJSON("nilaiA.json", function (data) {
           tampilkanData(data.nilai);
         });
 
       } else if (pilihan === "B") {
-        $.getJSON("nilaib.js", function (data) {
+        $.getJSON("nilaiB.json", function (data) {
           tampilkanData(data.nilai);
         });
       }
     });
   </script>
-
 </body>
 </html>
